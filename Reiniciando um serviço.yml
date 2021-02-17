@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: inicia o serviço do zabbix
+      ansible.builtin.systemd:
+        state: restarted
+        name: zabbix-agent
+...
