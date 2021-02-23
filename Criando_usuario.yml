@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Criando o usuário RJS
+      user:
+        name: RJS
+        comment: Rodrigo Jácomo dos Santos
+        uid: 2500
+        shell: /bin/bash
+...

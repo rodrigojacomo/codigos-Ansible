@@ -1,0 +1,22 @@
+---
+# Criação do grupo teste no S.O
+- hosts: all
+  become: yes
+  tasks:
+    - name: Criação do grupo teste
+      group:
+        name: teste
+        state: present
+
+# Criação de vários grupos em S.O
+
+  tasks:
+    - name: Criando mais de um grupo
+      group:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - teste1
+        - teste2
+        - teste3
+...
